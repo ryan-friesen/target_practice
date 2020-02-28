@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<link href="style.css" rel="stylesheet">
+</head>
+<body onload="fillCanvas();">
+<div onclick="targetNodeName(event);">
+<h3>1.</h3><p>Click on this. See how an alert window pops up with "P" as the text? That's referencing the &ltp&gt tag encapsulating this text.</h3>
+</div>
+<div onclick="target(event);">
+<h3>2.</h3> <p>Now click on this. See how you get an alert window with different text?</p>
+</div>
+<div onclick="targetTagName(event);">
+<span><h3>3.</h3><button>Click me!</button></span>
+<h3>4. Now click me!</h3>
+</div>
+<p id="target-text">(Awaiting your click)</p>
+<p>In 3. and 4. above, the click event triggered a function that extracted the target element's tagName attribute, and inserted it into the above text.</p>
+<p>Threre are dozens of attributes every HTML element possesses- some others being "id", "contenteditable", and "style".</p>
+<p>Now, in the below field, move the mouse around. See how the x and y coordinates within the element are listed continuously as the cursor is moved?</p>
+<div id="mousemove-container" onmousemove="mouseMoveCoordinates(event);"></div>
+<p id="mousemove-text">X = 0, Y = 0</p>
+<canvas id="my-canvas" onmousemove="getRGB(event);" onClick="listRGBValues(event);">Your browser doesn't support the HTML canvas tag.</canvas>
+<p id="rgb-text"></p>
+<p id="hex-text"></p>
+<div id="color-display">
+</div>
+<script src="main.js"></script>
+</body>
+</html>
