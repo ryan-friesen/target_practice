@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Target Practice</title>
+<link href="style.css" rel="stylesheet">
+</head>
+<body onload="fillCanvas();">
+<div onclick="targetNodeName(event);">
+<h3>1.</h3><p>Click on this. See how an alert window pops up with "P" as the text? That's referencing the &lt;p&gt; tag encapsulating this text.</p>
+<p>Below is the function in the main.js file that completes the above operation:</p>
+<h3>Now click on this. See how "H3" is now listed? That's because this text is set in an &lt;h2&gt; tag.</h3>
+<img src="target_practice_pics/targetNodeName.JPG" />
+</div>
+<div onclick="target(event);">
+<h3>2.</h3> <p>Now click on this. See how you get an alert window with different text?</p>
+<p>Although the alerr window contains what appears to be more complicated information, it's actually the opposite case; the function that produces this output is even simpler:</p>
+<img src="target_practice_pics/target.JPG" />
+</div>
+<div onclick="targetTagName(event);"><h3>3.</h3><button>Click me!</button>
+<h3>4. Now click me!</h3>
+</div>
+<p id="target-text">(Awaiting your click)</p>
+<p>In 3. and 4. above, the click event triggered a function that extracted the target element's tagName attribute, and inserted it into the above text.</p>
+<p>Threre are dozens of attributes every HTML element possesses- some others being "id", "contenteditable", and "style".</p>
+<p>Now, in the below field, move the mouse around. See how the x and y coordinates within the element are listed continuously as the cursor is moved?</p>
+<div id="mousemove-container" onmousemove="mouseMoveCoordinates(event);"></div>
+<p id="mousemove-text">X = 0, Y = 0</p>
+<canvas id="my-canvas" onmousemove="getRGB(event);" onClick="listRGBValues(event);">Your browser doesn't support the HTML canvas tag.</canvas>
+<p id="rgb-text"></p>
+<p id="hex-text"></p>
+<script src="main.js"></script>
+</body>
+</html>
