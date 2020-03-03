@@ -1,30 +1,67 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
+<title>Target Practice</title>
 <link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body onload="fillCanvas();">
 <div onclick="targetNodeName(event);">
-<h3>1.</h3><p>Click on this. See how an alert window pops up with "P" as the text? That's referencing the &ltp&gt tag encapsulating this text.</h3>
+<h3>1.</h3><p>Click on this. See how an alert window pops up with "P" as the text? That's referencing the &lt;p&gt; tag encapsulating this text.</p>
+<p>Below is the function in the main.js file that completes the above operation:</p>
+<h3>Now click on this. See how "H3" is now listed? That's because this text is set in an &lt;h3&gt; tag. Now click on the below image.</h3>
+<img src="target_practice_pics/targetNodeName.JPG" />
 </div>
 <div onclick="target(event);">
 <h3>2.</h3> <p>Now click on this. See how you get an alert window with different text?</p>
+<p>Although the alerr window contains what appears to be more complicated information, it's actually the opposite case; the function that produces this output is even simpler:</p>
+<img src="target_practice_pics/target.JPG" />
 </div>
-<div onclick="targetTagName(event);">
-<span><h3>3.</h3><button>Click me!</button></span>
-<h3>4. Now click me!</h3>
+<div onclick="targetTagName(event);"><h3>3.</h3><button>Click me!</button>
+<h3>4. Now click me! And after that, the image below that shows the function in play.</h3>
+<img src="target_practice_pics/targetTagName.JPG" />
 </div>
 <p id="target-text">(Awaiting your click)</p>
 <p>In 3. and 4. above, the click event triggered a function that extracted the target element's tagName attribute, and inserted it into the above text.</p>
 <p>Threre are dozens of attributes every HTML element possesses- some others being "id", "contenteditable", and "style".</p>
-<p>Now, in the below field, move the mouse around. See how the x and y coordinates within the element are listed continuously as the cursor is moved?</p>
-<div id="mousemove-container" onmousemove="mouseMoveCoordinates(event);"></div>
-<p id="mousemove-text">X = 0, Y = 0</p>
+<p>Now, in the below field, move the mouse around. See how the x and y coordinates within the element are listed continuously as the cursor is moved? That's because an event listener has been added, which tracks when the cursor is moved.</p>
+<table>
+<tbody>
+<tr>
+<td>
+<div id="mousemove-container" onmousemove="mouseMoveCoordinates(event);"><p id="mousemove-text">X = 0, Y = 0</p></div>
+</td>
+<td>
+<p>Below are the functions that register the onMouseMove event, and sets the X and Y values inside the container:</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<img src="target_practice_pics/mouseMoveCoordinates.JPG" />
+<img src="target_practice_pics/getCoords.JPG" />
+</td>
+</tr>
+<tr>
+<td>
 <canvas id="my-canvas" onmousemove="getRGB(event);" onClick="listRGBValues(event);">Your browser doesn't support the HTML canvas tag.</canvas>
-<p id="rgb-text"></p>
-<p id="hex-text"></p>
-<div id="color-display">
-</div>
+<p id="rgb-text">Red: - Green: - Blue: -</p>
+<p id="hex-text">Background: #------</p>
+</td>
+<td>
+<select class="form-control" name="color-menu" id="color-menu">
+						<option value="text">Change Text Color</option>
+						<option value="body">Change Body Color</option>
+                        <option value="menu-background">Change Menu Background Color</option>
+                        <option value="menu-text">Change Menu Text Color</option>
+                        </select>
+                        </td>
+                        </tr>
+                        </tbody>
+                        </table>
 <script src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

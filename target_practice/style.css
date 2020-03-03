@@ -1,27 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit|Righteous&display=swap");
+
 #mousemove-container {
   width: 500px;
   height: 200px;
   border-style: solid;
-  background-color: #aaa;
+  font-family: "Righteous", arial;
+  margin-bottom: 10px;
 }
-
-#myCanvas {
-  height: 200px;
-  width: 200px;
+#my-canvas {
+  height: 150px;
+  width: 300px;
   border-style: solid;
   border-width: 1px;
-  border-color: #000;
-  float: left;
+  cursor: pointer;
+}
+
+img {
+  cursor: pointer;
+}
+
+select#color-menu.form-control {
+  width: auto;
 }
 
 p {
   cursor: pointer;
-  background: #ddd;
+  font-family: "Kanit", times;
 }
 
-p:hover {
-  background: #aaa;
-  transition-duration: 0.5s;
+#mousemove-text {
+  font-family: "Righteous", monospace;
+  font-size: 40px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 #target-text {
@@ -32,7 +43,7 @@ p:hover {
 
 #color-display {
   height: 200px;
-  width: 200px;
+  width: 100px;
   background: #333;
 }
 
